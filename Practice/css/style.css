@@ -1,0 +1,79 @@
+.typing {
+    position: relative;
+    width: fit-content;
+    padding-right: 20px;
+}
+
+
+.typing::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    color: black;
+    background: #fff;
+    animation: typing 6s steps(20) infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 20ch;
+    }
+
+    to {
+        width: 0ch;
+    }
+}
+
+
+/* rotating-dots */
+.banner-top {
+    padding: 40px;
+    position: relative;
+    margin-top: 80px;
+}
+
+.banner-top::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    border: 20px solid #ea4020;
+    border-radius: 310px;
+    background: #fff;
+}
+
+
+.banner-img {
+    border-radius: 50% 50% 0% 50%;
+    border: 15px solid #292929 !important;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+
+
+.banner-top:before {
+    content: "";
+    background-image: url(../img/dots.png);
+    position: absolute;
+    top: 0;
+    left: -50px;
+    right: 0;
+    bottom: 0;
+    background-position: left;
+    background-size: cover;
+    animation: spin 80s linear infinite;
+}
+
+@keyframes spin{
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
