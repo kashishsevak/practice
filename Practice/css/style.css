@@ -25,55 +25,101 @@
     }
 }
 
+.main-section {
+	padding-top:50px;
+	padding-bottom:100px;
+}
+.banner-left h1 {
+	margin-top:30%;
+}
+.banner-left h1 {
+	font-size: 20px;
+	font-weight: 900;
+}
+.banner-left h2 {
+	color: #292929;
+	font-size: 60px;
+	font-weight: 700;
+}
+.banner-left h3 {
+	color: #292929;
+	font-weight: 600;
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+.banner-left p {
+	font-size: 16px;
+	line-height: 30px;
+	color: #607D8B;
+}
+.head-bottom {
+	height: 3px;
+	width:140px;
+	margin-bottom: 9px;
+	margin-top: 0px;
+	display: inline-block;
+	background-color:#ea4020;
+}
+.banner-btn {
+	margin-top: 40px;
+}
+.banner-btn button {
+	padding: 14px 40px;
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #ea4020;
+	font-size:16px;
+}
 
-/* rotating-dots */
+
+
 .banner-top {
-    padding: 40px;
-    position: relative;
-    margin-top: 80px;
+	padding: 40px;
+	position: relative;
+	margin-top:80px;
 }
-
-.banner-top::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    border: 20px solid #ea4020;
-    border-radius: 310px;
-    background: #fff;
-}
-
-
 .banner-img {
-    border-radius: 50% 50% 0% 50%;
-    border: 15px solid #292929 !important;
-    position: relative;
-    z-index: 99;
-    overflow: hidden;
+	border-radius: 50% 50% 0% 50%;
+	border: 15px solid #292929 !important;
+	position: relative;
+	z-index: 99;
+	overflow: hidden;
 }
-
+.banner-img img {
+	width: 100%;
+}
 
 .banner-top:before {
-    content: "";
-    background-image: url(../img/dots.png);
-    position: absolute;
-    top: 0;
-    left: -50px;
-    right: 0;
-    bottom: 0;
-    background-position: left;
-    background-size: cover;
-    animation: spin 80s linear infinite;
+	content: "";
+	background-image: url(../img/dots.png);
+	position: absolute;
+	top: 0;
+	left: -40px;
+	right: 0;
+	bottom: 0;
+	background-position: left;
+	background-size: cover;
+	animation-name: rotate;
+	animation-duration:80s;
+	animation-iteration-count: infinite;
 }
-
-@keyframes spin{
-    from {
-        transform: rotate(360deg);
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
+@keyframes rotate {
+ from {
+transform: rotate(-360deg);
+}
+to {
+	transform: rotate(360deg);
+}
+}
+.banner-top:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	width: 200vw;
+	border: 20px solid #ea4020;
+	border-radius: 310px;
+	background: #fff;
 }
