@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seamless Continuous Scrolling Offers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .marquee-wrapper {
+      width: 100%;
+      overflow: hidden;
+      background: #f7f7f7;
+      padding: 10px 0;
+      border: 1px solid #ccc;
+    }
+    .marquee-content {
+      display: flex;
+      gap: 20px;
+      /* The total width will be double of original set, so width: max-content to fit all */
+      width: max-content;
+      animation: scroll-left 20s linear infinite;
+    }
+    .offer {
+      flex: 0 0 auto;
+      background: #e0e0e0;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 18px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    /* Responsive widths */
+    @media (max-width: 767px) {
+      .offer {
+        min-width: 70vw;
+        font-size: 16px;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .offer {
+        min-width: 40vw;
+      }
+    }
+    @media (min-width: 1024px) {
+      .offer {
+        min-width: 22vw;
+      }
+    }
+
+    /* The key animation moves content left by 50% (half its total width) */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-50%));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-wrapper">
+    <div class="marquee-content" aria-label="Offers">
+      <!-- Original 6 offers -->
+      <div class="offer">Offer 1</div>
+      <div class="offer">Offer 2</div>
+      <div class="offer">Offer 3</div>
+      <div class="offer">Offer 4</div>
+      <div class="offer">Offer 5</div>
+      <div class="offer">Offer 6</div>
+      <!-- Duplicate same 6 offers immediately after -->
+      <div class="offer">Offer 1</div>
+      <div class="offer">Offer 2</div>
+      <div class="offer">Offer 3</div>
+      <div class="offer">Offer 4</div>
+      <div class="offer">Offer 5</div>
+      <div class="offer">Offer 6</div>
+    </div>
+  </div>
+</body>
+</html>
